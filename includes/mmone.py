@@ -30,7 +30,7 @@ class mmone:
 
     def e_count_task_in_queue(self):
         return (
-            self.p_of_k_tasks_server() *
+            self.p_of_k_tasks_server(1) *
             (
                 self.get_rho() / ((1 - self.get_rho()) ** 2)
             )
@@ -41,3 +41,16 @@ class mmone:
 
     def e_time_of_wait_in_queue(self):
         return
+
+    def __str__(self):
+        return \
+            "MU - intensity of serve per min - " + str(self.mu) + "\n" + \
+            "LA - insensity of messages per min - " + str(self.la) + "\n" \
+            "RHO - E occupacy per min - " + str(self.get_rho()) + "\n" \
+            "System is " + (
+                "stable" if self.get_rho() < 1 else "unstable"
+            ) + "\n"
+            # \
+            # "E count of tasks in the queue " + str(
+            #     self.e_count_task_in_queue()
+            # ) + "\n"

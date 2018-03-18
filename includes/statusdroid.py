@@ -19,7 +19,8 @@ class statusdroid:
         tmp_reg.remove(self.region)
         for i in [self.region] + tmp_reg:
             data = urllib.request.urlopen(
-                'https://www.statusdroid.com/api/statistics/response-time/?range_hours=24&user_website_guid=' +
+                'https://www.statusdroid.com/api/statistics/response-time/' +
+                '?range_hours=24&user_website_guid=' +
                 self.guid + '&region=' + i
             ).read().decode('utf-8')
             if len(data) != 2:

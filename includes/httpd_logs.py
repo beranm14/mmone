@@ -17,10 +17,10 @@ class httpd_logs:
             ':' +
             time.strftime("%H")
         )
-        results = []
+        results_count = 0
         with open(self.path_to_log) as f:
             for line in f:
-                results.append(
-                    regex.search(line)
-                )
-        return len(results) / 60
+                match_reg = regex.search(line)
+                if match_reg is not None:
+                    results_count += 1
+        return results_count / 60

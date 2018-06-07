@@ -1,2 +1,2 @@
-httpd_logs: /var/log/apache2/access.log
+httpd_logs: /var/log/apache2/other_vhosts_access.log
 statusdroid_statuspage: https://www.statusdroid.com/status/25578bd2-d1dd-4c15-b214-a7ac7801005a
